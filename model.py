@@ -53,8 +53,11 @@ def append_column(X, col):
     col_2d = col.reshape(-1, 1)
     return np.concatenate([X, col_2d], axis=1)
 
-# Step 6 - one_hot_encode (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode
+def one_hot_encode(labels):
+    labels = np.asarray(labels)
+    unique_labels = np.unique(labels)
+    return (labels[:, None] == unique_labels[None, :]).astype(float)
 
 # Step 7 - fit_standardizer (not yet solved)
 # TODO: implement
